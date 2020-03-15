@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import seedu.address.model.PetTracker;
 import seedu.address.model.pet.Gender;
 import seedu.address.model.pet.Pet;
 
@@ -69,6 +70,15 @@ public class TypicalPets {
         }
         return ab;
     }*/
+
+    //for JsonPetTrackerStorageTest
+    public static PetTracker getTypicalPetTracker() {
+        PetTracker ab = new PetTracker();
+        for (Pet pet : getTypicalPets()) {
+            ab.addPet(pet);
+        }
+        return ab;
+    }
 
     public static List<Pet> getTypicalPets() {
         return new ArrayList<>(Arrays.asList(COCO, GARFIELD, CARL, DANIEL, ELLE, FIONA, GEORGE));

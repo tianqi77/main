@@ -1,11 +1,11 @@
 package seedu.address.logic.parser.general;
 
-import org.junit.jupiter.api.Test;
-import seedu.address.logic.parser.general.ArgumentMultimap;
-import seedu.address.logic.parser.general.ArgumentTokenizer;
-import seedu.address.logic.parser.general.Prefix;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 public class ArgumentTokenizerTest {
 

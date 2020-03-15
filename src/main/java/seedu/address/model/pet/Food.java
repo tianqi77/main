@@ -11,7 +11,8 @@ import java.util.Objects;
  */
 public class Food {
 
-    public static final String MESSAGE_CONSTRAINTS = "Food names should only contain alphanumeric characters and "
+    public static final String MESSAGE_CONSTRAINTS = "Food name and amount should be included and separated by ':'. ";
+    public static final String MESSAGE_NAME_CONSTRAINTS = "Food names should only contain alphanumeric characters and "
             + "spaces only, and it should not be blank";
     public static final String MESSAGE_AMOUNT_CONSTRAINTS = "Food amount must be a number and greater than 0";
     public static final String VALIDATION_REGEX = "[^\\s].*";
@@ -26,7 +27,7 @@ public class Food {
      */
     public Food(String foodName, int foodAmount) {
         requireNonNull(foodName);
-        checkArgument(isValidFoodName(foodName), MESSAGE_CONSTRAINTS);
+        checkArgument(isValidFoodName(foodName), MESSAGE_NAME_CONSTRAINTS);
         this.foodName = foodName;
         checkArgument(isValidFoodAmount(foodAmount));
         this.foodAmount = foodAmount;

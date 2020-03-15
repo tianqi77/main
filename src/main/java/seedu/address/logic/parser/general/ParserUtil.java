@@ -121,7 +121,7 @@ public class ParserUtil {
                 throw new ParseException(Food.MESSAGE_AMOUNT_CONSTRAINTS);
             }
             return new Food(trimmedFood, foodAmount);
-        }catch (PatternSyntaxException e) {
+        } catch (PatternSyntaxException e) {
             throw new ParseException(Food.MESSAGE_CONSTRAINTS);
         }
     }

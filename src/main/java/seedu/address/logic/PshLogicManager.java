@@ -16,7 +16,7 @@ import seedu.address.model.PshModel;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyPetTracker;
 import seedu.address.model.pet.Pet;
-import seedu.address.storage.Storage;
+import seedu.address.storage.PshStorage;
 
 /**
  * The main LogicManager of Pet Store Helper.
@@ -27,10 +27,10 @@ public class PshLogicManager implements PshLogic {
     private final Logger logger = LogsCenter.getLogger(LogicManager.class);
 
     private final PshModel model;
-    private final Storage storage;
+    private final PshStorage storage;
     private final PetTrackerParser petTrackerParser;
 
-    public PshLogicManager(PshModel model, Storage storage) {
+    public PshLogicManager(PshModel model, PshStorage storage) {
         this.model = model;
         this.storage = storage;
         petTrackerParser = new PetTrackerParser();
@@ -45,9 +45,7 @@ public class PshLogicManager implements PshLogic {
         commandResult = command.execute(model);
 
         try {
-            //model.getPetTracker is ReadOnlyPetTracker,
-            //here is casted to ReadOnlyAddressBook to pass checkstyle test
-            storage.saveAddressBook((ReadOnlyAddressBook) model.getPetTracker());
+            storage.savePetTracker(model.getPetTracker());
         } catch (IOException ioe) {
             throw new CommandException(FILE_OPS_ERROR_MESSAGE + ioe, ioe);
         }

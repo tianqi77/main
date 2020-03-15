@@ -40,7 +40,7 @@ public class AddPetCommand extends Command {
             + PREFIX_TAG + "lazy ";
 
     public static final String MESSAGE_SUCCESS = "New pet added: %1$s";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This pet already exists in the pet store helper";
+    public static final String MESSAGE_DUPLICATE_PET = "This pet already exists in the pet store helper";
 
     private final Pet toAdd;
 
@@ -56,7 +56,7 @@ public class AddPetCommand extends Command {
     public CommandResult execute(PshModel model) throws CommandException {
         requireNonNull(model);
         if (model.hasPet(toAdd)) {
-            throw new CommandException(MESSAGE_DUPLICATE_PERSON);
+            throw new CommandException(MESSAGE_DUPLICATE_PET);
         }
         model.addPet(toAdd);
         return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));

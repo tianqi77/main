@@ -53,7 +53,8 @@ public class JsonAdaptedPetTest {
 
     @Test
     public void toModelType_nullName_throwsIllegalValueException() {
-        JsonAdaptedPet pet = new JsonAdaptedPet(null, VALID_GENDER, VALID_DOB, VALID_SPECIES, VALID_FOODLIST, VALID_TAGS);
+        JsonAdaptedPet pet = new JsonAdaptedPet(
+                null, VALID_GENDER, VALID_DOB, VALID_SPECIES, VALID_FOODLIST, VALID_TAGS);
         String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName());
         assertThrows(IllegalValueException.class, expectedMessage, pet::toModelType);
     }
@@ -68,7 +69,8 @@ public class JsonAdaptedPetTest {
 
     @Test
     public void toModelType_nullGender_throwsIllegalValueException() {
-        JsonAdaptedPet pet = new JsonAdaptedPet(VALID_NAME, null, VALID_DOB, VALID_SPECIES, VALID_FOODLIST, VALID_TAGS);
+        JsonAdaptedPet pet = new JsonAdaptedPet(
+                VALID_NAME, null, VALID_DOB, VALID_SPECIES, VALID_FOODLIST, VALID_TAGS);
         String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Gender.class.getSimpleName());
         assertThrows(IllegalValueException.class, expectedMessage, pet::toModelType);
     }
@@ -83,7 +85,8 @@ public class JsonAdaptedPetTest {
 
     @Test
     public void toModelType_nullDateOfBirth_throwsIllegalValueException() {
-        JsonAdaptedPet pet = new JsonAdaptedPet(VALID_NAME, VALID_GENDER, null, VALID_SPECIES, VALID_FOODLIST, VALID_TAGS);
+        JsonAdaptedPet pet = new JsonAdaptedPet(
+                VALID_NAME, VALID_GENDER, null, VALID_SPECIES, VALID_FOODLIST, VALID_TAGS);
         String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, DateOfBirth.class.getSimpleName());
         assertThrows(IllegalValueException.class, expectedMessage, pet::toModelType);
     }
@@ -98,7 +101,8 @@ public class JsonAdaptedPetTest {
 
     @Test
     public void toModelType_nullSpecies_throwsIllegalValueException() {
-        JsonAdaptedPet pet = new JsonAdaptedPet(VALID_NAME, VALID_GENDER, INVALID_DOB, null, VALID_FOODLIST, VALID_TAGS);
+        JsonAdaptedPet pet = new JsonAdaptedPet(
+                VALID_NAME, VALID_GENDER, INVALID_DOB, null, VALID_FOODLIST, VALID_TAGS);
         String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Species.class.getSimpleName());
         assertThrows(IllegalValueException.class, expectedMessage, pet::toModelType);
     }

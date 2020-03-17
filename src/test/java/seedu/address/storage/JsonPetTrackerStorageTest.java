@@ -47,7 +47,7 @@ public class JsonPetTrackerStorageTest {
 
     @Test
     public void read_notJsonFormat_exceptionThrown() {
-        assertThrows(DataConversionException.class, () -> readPetTracker("notJsonFormatAddressBook.json"));
+        assertThrows(DataConversionException.class, () -> readPetTracker("notJsonFormatPetTracker.json"));
     }
 
     @Test
@@ -61,7 +61,7 @@ public class JsonPetTrackerStorageTest {
     }
 
     @Test
-    public void readAndSaveAddressBook_allInOrder_success() throws Exception {
+    public void readAndSavePetTracker_allInOrder_success() throws Exception {
         Path filePath = testFolder.resolve("TempPetTracker.json");
         PetTracker original = getTypicalPetTracker();
         JsonPetTrackerStorage jsonPetTrackerStorage = new JsonPetTrackerStorage(filePath);

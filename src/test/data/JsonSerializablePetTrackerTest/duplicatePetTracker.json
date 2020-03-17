@@ -1,0 +1,14 @@
+{
+  "pets": [ {
+    "name": "Garfield",
+    "gender": "male",
+    "dateOfBirth": "01-01-2019",
+    "species": "cat",
+    "tagged": [ "friends" ]
+  }, {
+    "name": "Garfield",
+    "gender": "male",
+    "dateOfBirth": "01-01-2019",
+    "species": "cat"
+  } ]
+}

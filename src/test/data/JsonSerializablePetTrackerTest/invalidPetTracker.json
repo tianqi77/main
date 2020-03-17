@@ -1,0 +1,8 @@
+{
+  "pets": [ {
+    "name": "Some Pet",
+    "gender": "invalid gender",
+    "dateOfBirth": "01-01-2019",
+    "species": "snake"
+  } ]
+}

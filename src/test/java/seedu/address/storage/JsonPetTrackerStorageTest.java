@@ -92,7 +92,7 @@ public class JsonPetTrackerStorageTest {
     }
 
     /**
-     * Saves {@code addressBook} at the specified {@code filePath}.
+     * Saves {@code petTracker} at the specified {@code filePath}.
      */
     private void savePetTracker(ReadOnlyPetTracker petTracker, String filePath) {
         try {

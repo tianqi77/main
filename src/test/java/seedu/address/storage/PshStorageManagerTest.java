@@ -20,13 +20,13 @@ public class PshStorageManagerTest {
     @TempDir
     public Path testFolder;
 
-    private PshStorageManager storageManager;
+    private StorageManager storageManager;
 
     @BeforeEach
     public void setUp() {
         JsonPetTrackerStorage petTrackerStorage = new JsonPetTrackerStorage(getTempFilePath("ab"));
         JsonUserPrefsStorage userPrefsStorage = new JsonUserPrefsStorage(getTempFilePath("prefs"));
-        storageManager = new PshStorageManager(petTrackerStorage, userPrefsStorage);
+        storageManager = new StorageManager(petTrackerStorage, userPrefsStorage);
     }
 
     private Path getTempFilePath(String fileName) {
@@ -51,8 +51,8 @@ public class PshStorageManagerTest {
     public void petTrackerReadSave() throws Exception {
         /*
          * Note: This is an integration test that verifies the StorageManager is properly wired to the
-         * {@link JsonAddressBookStorage} class.
-         * More extensive testing of UserPref saving/reading is done in {@link JsonAddressBookStorageTest} class.
+         * {@link JsonPetTrackerStorage} class.
+         * More extensive testing of UserPref saving/reading is done in {@link JsonPetTrackerStorageTest} class.
          */
         PetTracker original = getTypicalPetTracker();
         storageManager.savePetTracker(original);

@@ -1,0 +1,13 @@
+{
+  "pets": [ {
+    "name": "Valid Pet",
+    "gender": "male",
+    "dateOfBirth": "01-01-2019",
+    "species": "dog"
+  }, {
+    "name": "Pet With Invalid dateOfBirth Field",
+    "gender": "female",
+    "dateOfBirth": "2019-01-01",
+    "species": "cat"
+  } ]
+}

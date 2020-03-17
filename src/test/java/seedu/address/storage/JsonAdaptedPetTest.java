@@ -103,7 +103,7 @@ public class JsonAdaptedPetTest {
     @Test
     public void toModelType_nullSpecies_throwsIllegalValueException() {
         JsonAdaptedPet pet = new JsonAdaptedPet(
-                VALID_NAME, VALID_GENDER, INVALID_DOB, null, VALID_FOODLIST, VALID_TAGS);
+                VALID_NAME, VALID_GENDER, VALID_DOB, null, VALID_FOODLIST, VALID_TAGS);
         String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Species.class.getSimpleName());
         assertThrows(IllegalValueException.class, expectedMessage, pet::toModelType);
     }

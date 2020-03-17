@@ -3,6 +3,7 @@
     "name": "Pet with invalid name field: Ha!ns Mu@ster",
     "gender": "male",
     "dateOfBirth": "01-01-2019",
-    "species": "dog"
+    "species": "dog",
+    "foodList": [ "Brand A:10" ]
   } ]
 }

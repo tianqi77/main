@@ -23,7 +23,8 @@ public class JsonAdaptedPetTest {
     private static final String INVALID_GENDER = "m";
     private static final String INVALID_SPECIES = "cat^";
     private static final String INVALID_FOOD_NAME = "ABC&";
-    private static final int INVALID_FOOD_AMOUNT = -1;
+    private static final String INVALID_FOOD_AMOUNT = "-1";
+    private static final String INVALID_FOOD = INVALID_FOOD_NAME + ":" + INVALID_FOOD_AMOUNT;
     private static final String INVALID_TAG = "#lazy";
 
     private static final String VALID_NAME = GARFIELD.getName().toString();
@@ -110,7 +111,7 @@ public class JsonAdaptedPetTest {
     @Test
     public void toModelType_invalidFoodList_throwsIllegalValueException() {
         List<JsonAdaptedFood> invalidFoodList = new ArrayList<>(VALID_FOODLIST);
-        invalidFoodList.add(new JsonAdaptedFood(INVALID_FOOD_NAME, INVALID_FOOD_AMOUNT));
+        invalidFoodList.add(new JsonAdaptedFood(INVALID_FOOD));
         JsonAdaptedPet pet =
                 new JsonAdaptedPet(VALID_NAME, VALID_GENDER, VALID_DOB, VALID_SPECIES, invalidFoodList, VALID_TAGS);
         assertThrows(IllegalValueException.class, pet::toModelType);
